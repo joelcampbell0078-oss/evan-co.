@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evan & Co. Furniture | Crafted for the way you live</title>
+  <meta name="description" content="Evan & Co. Furniture offers thoughtfully designed, quality furniture for living rooms, bedrooms, dining spaces and home offices.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:title" content="Evan & Co. Furniture">
+  <meta property="og:description" content="Crafted for the way you live.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2b2622;
+      --muted: #6f655c;
+      --cream: #f7f2ea;
+      --sand: #e9dfd0;
+      --walnut: #5a3e2b;
+      --brass: #b08a4e;
+      --white: #ffffff;
+      --radius: 6px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+    }
+    h1, h2, h3, .logo { font-family: 'Cormorant Garamond', serif; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247, 242, 234, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--sand);
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    .logo { font-size: 1.7rem; font-weight: 700; letter-spacing: 0.5px; color: var(--walnut); }
+    .logo span { color: var(--brass); }
+    .logo img { display: block; height: 48px; width: auto; }
+    nav ul { display: flex; gap: 28px; list-style: none; font-size: 0.95rem; font-weight: 500; }
+    nav a:hover { color: var(--brass); }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 14px 30px; border-radius: var(--radius);
+      font-weight: 600; font-size: 0.95rem; transition: all .25s ease;
+    }
+    .btn-primary { background: var(--walnut); color: var(--white); }
+    .btn-primary:hover { background: var(--brass); }
+    .btn-outline { border: 1.5px solid var(--walnut); color: var(--walnut); margin-left: 12px; }
+    .btn-outline:hover { background: var(--walnut); color: var(--white); }
+
+    /* Hero */
+    .hero {
+      padding: 110px 0 120px;
+      background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 100%);
+    }
+    .hero-inner { max-width: 640px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 0.78rem; color: var(--brass); font-weight: 600; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 4.6rem); line-height: 1.08; color: var(--walnut); margin-bottom: 22px; }
+    .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 34px; }
+
+    /* Sections */
+    section { padding: 90px 0; }
+    .section-head { text-align: center; max-width: 600px; margin: 0 auto 56px; }
+    .section-head h2 { font-size: 2.6rem; color: var(--walnut); margin-bottom: 12px; }
+    .section-head p { color: var(--muted); }
+
+    /* Collections */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 26px; }
+    .card {
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--sand); transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(90, 62, 43, 0.12); }
+    .card-img {
+      height: 190px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--white);
+    }
+    .c1 { background: linear-gradient(135deg, #7a5a42, #a48360); }
+    .c2 { background: linear-gradient(135deg, #5a3e2b, #8a6a4d); }
+    .c3 { background: linear-gradient(135deg, #8c7a63, #b9a68a); }
+    .c4 { background: linear-gradient(135deg, #3f3329, #6f5a46); }
+    .card-body { padding: 22px; }
+    .card-body h3 { font-size: 1.5rem; color: var(--walnut); margin-bottom: 6px; }
+    .card-body p { color: var(--muted); font-size: 0.93rem; }
+
+    /* About */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-visual {
+      height: 380px; border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--walnut), var(--brass));
+      display: flex; align-items: flex-end; padding: 28px;
+      color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+    }
+    .about h2 { font-size: 2.6rem; color: var(--walnut); margin-bottom: 16px; }
+    .about p { color: var(--muted); margin-bottom: 16px; }
+
+    /* Values */
+    .values { text-align: center; }
+    .value h3 { font-size: 1.5rem; color: var(--walnut); margin-bottom: 8px; }
+    .value p { color: var(--muted); font-size: 0.95rem; }
+    .value .icon { font-size: 1.8rem; color: var(--brass); margin-bottom: 10px; }
+
+    /* Contact */
+    .contact { background: var(--walnut); color: var(--white); }
+    .contact .section-head h2 { color: var(--white); }
+    .contact .section-head p { color: #e3d7c6; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .contact-info p { margin-bottom: 14px; color: #e3d7c6; }
+    .contact-info strong { color: var(--white); display: block; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brass); }
+    form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%; padding: 14px; border-radius: var(--radius); border: none;
+      font-family: inherit; font-size: 0.95rem;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    form button { background: var(--brass); color: var(--white); border: none; cursor: pointer; font-family: inherit; }
+    form button:hover { background: #967439; }
+
+    /* Footer */
+    footer { background: #231e1a; color: #b9ae9f; text-align: center; padding: 28px 0; font-size: 0.88rem; }
+
+    @media (max-width: 800px) {
+      nav ul { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .btn-outline { margin: 12px 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo"><img src="logo.svg" alt="Evan & Co. Furniture"></a>
+      <nav>
+        <ul>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#values">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="eyebrow">Evan & Co. Furniture</p>
+        <h1>Crafted for the way you live.</h1>
+        <p>Timeless, quality furniture designed to make every room feel considered, comfortable and uniquely yours.</p>
+        <a href="#collections" class="btn btn-primary">Explore Collections</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our Collections</h2>
+          <p>Pieces for every space in your home, built to last and styled to stay relevant.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="card-img c1">Living Room</div>
+            <div class="card-body">
+              <h3>Living Room</h3>
+              <p>Sofas, armchairs, coffee tables and media units for relaxed everyday living.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img c2">Bedroom</div>
+            <div class="card-body">
+              <h3>Bedroom</h3>
+              <p>Beds, nightstands and dressers that turn your bedroom into a retreat.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img c3">Dining</div>
+            <div class="card-body">
+              <h3>Dining</h3>
+              <p>Tables, chairs and sideboards made for shared meals and long conversations.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img c4">Home Office</div>
+            <div class="card-body">
+              <h3>Home Office</h3>
+              <p>Desks, storage and seating that balance comfort with productivity.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">Quality you can feel.</div>
+        <div>
+          <p class="eyebrow">About Us</p>
+          <h2>Furniture with purpose.</h2>
+          <p>Evan & Co. Furniture was created around a simple idea: a home should reflect the people who live in it. We focus on honest materials, careful construction and clean, lasting design.</p>
+          <p>From first sketch to final delivery, every piece is chosen to bring warmth, function and style into your space.</p>
+          <a href="#contact" class="btn btn-primary">Talk to Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="values" id="values">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Choose Us</h2>
+          <p>What you can expect when you furnish with Evan & Co.</p>
+        </div>
+        <div class="grid">
+          <div class="value">
+            <div class="icon">◆</div>
+            <h3>Quality Materials</h3>
+            <p>Durable woods, fabrics and finishes selected for longevity.</p>
+          </div>
+          <div class="value">
+            <div class="icon">◆</div>
+            <h3>Timeless Design</h3>
+            <p>Classic silhouettes that fit seamlessly into any interior.</p>
+          </div>
+          <div class="value">
+            <div class="icon">◆</div>
+            <h3>Personal Service</h3>
+            <p>Friendly guidance to help you choose the right pieces.</p>
+          </div>
+          <div class="value">
+            <div class="icon">◆</div>
+            <h3>Reliable Delivery</h3>
+            <p>Careful handling and dependable scheduling to your door.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact Us</h2>
+          <p>Questions, custom requests or a showroom visit? We'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p><strong>Email</strong>hello@evanandcofurniture.com</p>
+            <p><strong>Phone</strong>(000) 000-0000</p>
+            <p><strong>Showroom</strong>123 Your Street, Your City, ST 00000</p>
+            <p><strong>Hours</strong>Mon–Sat, 10:00 AM – 6:00 PM</p>
+          </div>
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="How can we help?" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Evan & Co. Furniture. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
