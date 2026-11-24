@@ -82,15 +82,12 @@
       border: 1px solid var(--sand); transition: transform .25s ease, box-shadow .25s ease;
     }
     .card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(90, 62, 43, 0.12); }
-    .card-img {
-      height: 190px; display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--white);
-    }
-    .c1 { background: linear-gradient(135deg, #7a5a42, #a48360); }
-    .c2 { background: linear-gradient(135deg, #5a3e2b, #8a6a4d); }
-    .c3 { background: linear-gradient(135deg, #8c7a63, #b9a68a); }
-    .c4 { background: linear-gradient(135deg, #3f3329, #6f5a46); }
+    .card-img { width: 100%; height: 240px; object-fit: cover; object-position: center; display: block; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn-brass { background: var(--brass); color: var(--white); }
+    .btn-brass:hover { background: #967439; }
+    .btn-light { border: 1.5px solid var(--white); color: var(--white); }
+    .btn-light:hover { background: var(--white); color: var(--walnut); }
     .card-body { padding: 22px; }
     .card-body h3 { font-size: 1.5rem; color: var(--walnut); margin-bottom: 6px; }
     .card-body p { color: var(--muted); font-size: 0.93rem; }
@@ -174,31 +171,38 @@
         </div>
         <div class="grid">
           <article class="card">
-            <div class="card-img c1">Living Room</div>
+            <img class="card-img" src="images/living-room.jpg" alt="Living room with a cream velvet sofa, gold-framed armchairs and a crystal chandelier">
             <div class="card-body">
               <h3>Living Room</h3>
               <p>Sofas, armchairs, coffee tables and media units for relaxed everyday living.</p>
             </div>
           </article>
           <article class="card">
-            <div class="card-img c2">Bedroom</div>
+            <img class="card-img" src="images/bedroom.jpg" alt="Dark wood bedroom set with a platform bed, nightstands and dresser">
             <div class="card-body">
               <h3>Bedroom</h3>
               <p>Beds, nightstands and dressers that turn your bedroom into a retreat.</p>
             </div>
           </article>
           <article class="card">
-            <div class="card-img c3">Dining</div>
+            <img class="card-img" src="images/dining.jpg" alt="Round wood dining table with upholstered chairs and warm pendant lighting">
             <div class="card-body">
               <h3>Dining</h3>
               <p>Tables, chairs and sideboards made for shared meals and long conversations.</p>
             </div>
           </article>
           <article class="card">
-            <div class="card-img c4">Home Office</div>
+            <img class="card-img" src="images/home-office.jpg" alt="Executive office desk with a matching wood storage cabinet">
             <div class="card-body">
               <h3>Home Office</h3>
               <p>Desks, storage and seating that balance comfort with productivity.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="images/outdoor.jpg" alt="Grey wicker outdoor sectional with cushions and a coffee table">
+            <div class="card-body">
+              <h3>Outdoor</h3>
+              <p>Weather-ready sectionals and tables for patios, porches and sunrooms.</p>
             </div>
           </article>
         </div>
@@ -257,8 +261,13 @@
         </div>
         <div class="contact-grid">
           <div class="contact-info">
-            <p><strong>Email</strong>hello@evanandcofurniture.com</p>
-            <p><strong>Phone</strong>(000) 000-0000</p>
+            <p><strong>Email</strong><a href="mailto:evan@gmail.com">evan@gmail.com</a></p>
+            <p><strong>Phone</strong><a href="tel:+15103227402">+1 (510) 322-7402</a></p>
+            <p><strong>WhatsApp</strong><a href="https://wa.me/15103227402" target="_blank" rel="noopener">+1 (510) 322-7402</a></p>
+            <div class="contact-actions">
+              <a class="btn btn-brass" href="tel:+15103227402">Call Us</a>
+              <a class="btn btn-light" href="https://wa.me/15103227402" target="_blank" rel="noopener">WhatsApp Us</a>
+            </div>
             <p><strong>Showroom</strong>123 Your Street, Your City, ST 00000</p>
             <p><strong>Hours</strong>Mon–Sat, 10:00 AM – 6:00 PM</p>
           </div>
